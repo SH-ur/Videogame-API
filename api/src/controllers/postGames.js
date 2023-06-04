@@ -1,26 +1,32 @@
 //import axios from 'axios';
-const Videogame = require('../models/Videogame');
+const { Videogame } = require("../db");
 
+const postGames = async (info) => {
+  const { name, description, image, platforms, rating, released, genreID } =
+    info;
+  try {
+    console.log(genreID);
+   
+    const gameCreate = await Videogame.create({
+      name,
+      description,
+      platforms,
+      image,
+      released,
+      rating,
+    });
+    console.log(gameCreate);
 
-const postGames= async(info)=>{
-    const{ID, name, description, image, platforms, rating, released, genreID}= info;
+    await gameCreate.setGenres(genreID);
+    console.log(gameCreate);
+    //en caso de
 
-    try{
-
-const gameCreate = await Videogame.create({
-    id: ID,
-    name: name,
-    description: description,
-    platforms: platforms,
-    image: image,
-    released: released,
-    rating: rating
-})
-
-await gameCreate.setGenres(genreID);
-return gameCreate;
-    } catch(err){
-return 'Something went wrong creating this game, you should make a quick review on the info';
-    }
-}
-module.exports= postGames;
+    return gameCreate;
+  } catch (err) {
+    return (
+      "Something went wrong creating this game, you should make a quick review on the info. The error was: " +
+      err.message
+    );
+  }
+};
+module.exports = postGames;

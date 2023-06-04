@@ -1,0 +1,18 @@
+.searchBarContainer .searchContainer2{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBarContainer .inputSearch{
+    border-radius: 2rem;
+    border-style: outset;
+    border: coral 5px outset
+}
+
+.searchBarContainer .buttonSearch{
+    border: forestgreen 4.5px groove;
+    border-radius: 3em;
+    cursor: pointer;
+}

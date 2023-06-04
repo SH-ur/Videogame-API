@@ -1,0 +1,18 @@
+.navOrder{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navOrder .selectOrderN{
+    border: chocolate inset 10px;
+    cursor: pointer;
+    border-radius: 1.5em;
+}
+
+.navOrder .selectOrderR{
+    border: seagreen outset 10px;
+    cursor: pointer;
+    border-radius: 2em;
+}

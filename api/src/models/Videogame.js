@@ -20,10 +20,11 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     },
     image:{type: DataTypes.STRING},
-    released:{type: DataTypes.DATE},
-    rating:{type: DataTypes.INTEGER},
+    released:{type: DataTypes.STRING},
+    rating:{type: DataTypes.FLOAT},
     createdInBD:{
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     }
   },{timestamps: false});
 };

@@ -10,16 +10,12 @@ gamesRouter
   .get("/", async (req, res) => {
     const { name } = req.query;
     try {
-      if (name) {
-        const accioGamesWithNames = await gameName(name);
-        res.status(200).json(accioGamesWithNames);
-      }
-      const accioGames = await games();
-      res.status(200).json(accioGames);
+     const results = name?await gameName(name): await games();
+      res.status(200).json(results);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
-  })
+  }) 
   .get("/:id", async (req, res) => {
     const { id } = req.params;
     try {
@@ -36,7 +32,6 @@ gamesRouter
 
   .post("/", async (req, res) => {
     const {
-      ID,
       name,
       description,
       platforms,
@@ -47,7 +42,6 @@ gamesRouter
     } = req.body;
     try {
       const gameCreated = await postGames({
-        ID,
         name,
         description,
         platforms,

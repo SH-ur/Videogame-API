@@ -1,0 +1,22 @@
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+    border: ruby groove 10px;
+    
+}
+
+.buttonContainer .buttonLog{
+    font-size: larger;
+    font-family: 'Times New Roman';
+    border: 10px greenyellow;
+    border-radius: 4rem;
+    color: rgb(27, 100, 27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 350px;
+    width: 90px;
+    height: 20px;
+    
+}

@@ -1,0 +1,12 @@
+.mainImage {
+    cursor: pointer;
+    width: 255px;
+    height: 160px;
+    border-radius: 25px;
+}
+
+.CardContainer{
+    border: solid goldenrod 5px;
+    border-radius: 25px;
+}
+

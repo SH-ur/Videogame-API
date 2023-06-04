@@ -1,0 +1,31 @@
+.Nav{
+    background-color: darkcyan;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+
+.Nav .LandLink{
+    border: 5px;
+    border-radius: 25px;
+    font-size: large;
+    color: greenyellow;
+    background-color: darkmagenta;
+}
+
+.Nav .homeLink{
+    font-family: 'Times New Roman', Times, serif;
+    
+    color:darkturquoise;
+    border: 3px dotted rgb(192, 127, 6);
+    border-radius: 20px;
+    background-color: rgb(76, 155, 128);
+}
+
+.Nav .createGLink{
+    color:black;
+    background-color: blueviolet;
+    border: 3.5px dotted orangered;
+}
