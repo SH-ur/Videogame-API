@@ -13,7 +13,7 @@ const Form = () => {
 platforms:'', released:'', rating:0, genreID:[]});
 const [error, setError] = useState({name:'', image: '', description:'',
 platforms:'', released:'', rating:''})
-console.log(error);
+console.log(typeof form.released);
 useEffect(()=>{
   dispatch(getAllGenres())
 }, [dispatch])

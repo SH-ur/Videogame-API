@@ -3,11 +3,12 @@ export const validation = (gameData)=>{
     let validateRating = /^-?\d+(.\d+)?$/;
     //let validateReleased= /^(0[1-9]|1\d|2\d|3[01])/(0[1-9]|1[0-2])/\d{4}$/;
 
+//Practica para control de fecha
 
 
-
-    const {name, description, image, platforms, rating, released}= gameData;
-
+const {name, description, image, platforms, rating, released}= gameData;
+const noMore = released.slice(0, 4)
+console.log(noMore);
     if(!name) err.name='Coloca un nombre por favor'
     
     if(!image) err.image= 'Coloca la dirección de tu imagen por favor'
@@ -21,6 +22,8 @@ export const validation = (gameData)=>{
     else if(rating <=0) err.rating='El rating no debe ser negativo, mi estimad@'
 
     if(!released) err.released = 'Coloca fecha de lanzamiento... porfavor'
+    else if(noMore > 2023) err.released= 'Por favor no te pases de fecha.'
+    else if (noMore <= 1940) err.released = 'Y tampoco coloques fechas donde los videojuegos no existían please.';
     return err;
     
 }
