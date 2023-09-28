@@ -9,6 +9,16 @@ export const validation = (gameData)=>{
 const {name, description, image, platforms, rating, released}= gameData;
 const noMore = released.slice(0, 4)
 console.log(noMore);
+
+//Parte 2
+const theDate = new Date();
+const days = theDate.getDate();
+const months =theDate.getMonth();
+const years = theDate.getFullYear();
+
+const dateOfCompare = `${years}/${months}/${days}`;
+console.log(dateOfCompare);
+//Termina la práctica aquí XD
     if(!name) err.name='Coloca un nombre por favor'
     
     if(!image) err.image= 'Coloca la dirección de tu imagen por favor'
@@ -22,7 +32,7 @@ console.log(noMore);
     else if(rating <=0) err.rating='El rating no debe ser negativo, mi estimad@'
 
     if(!released) err.released = 'Coloca fecha de lanzamiento... porfavor'
-    else if(noMore > 2023) err.released= 'Por favor no te pases de fecha.'
+    else if(released > dateOfCompare) err.released= 'Por favor no te pases de fecha.'
     else if (noMore <= 1940) err.released = 'Y tampoco coloques fechas donde los videojuegos no existían please.';
     return err;
     
