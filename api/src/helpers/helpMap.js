@@ -13,7 +13,7 @@
 
         }
     })
-    return mapeo;
+    if(2==2) return mapeo;
  }
 
 module.exports= {mapFunc};
