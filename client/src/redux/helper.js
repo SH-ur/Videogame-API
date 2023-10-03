@@ -19,4 +19,4 @@ if(orderType==='name'){
 }
 }
 
-module.exports={orders};
+export default orders;

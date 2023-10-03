@@ -12,7 +12,7 @@ import {
   FILTER_ORIGIN,
 } from "./actions";
 
-import { orders } from "./helper";
+import  orders  from "./helper";
 let initialState = {
   allGames: [],
   gamesBackUp: [],
