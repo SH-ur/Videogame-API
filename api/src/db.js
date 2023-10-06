@@ -7,13 +7,23 @@ const path = require('path');
 const gameF = require('./models/Videogame');
 const genreF = require('./models/Genre')
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DATABASE_URL, CONNECTED, DB_HOST, DB_USER, DB_PASSWORD
 } = process.env;
+//Para deploy en render
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
+let sequelize;
+if(CONNECTED === "YES"){
+sequelize = new Sequelize(DATABASE_URL, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+  ssl: true
+}) 
+} else{
+  sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+})
+}
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
