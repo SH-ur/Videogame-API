@@ -15,7 +15,7 @@ export function postGames(info) {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "https://videogame-app-api.onrender.com/videogames",
+        "https://videogames-api-bk15.onrender.com/videogames",
         info
       );
       console.log("Salió bien el response: " + response + "!");
@@ -32,7 +32,7 @@ export function postGames(info) {
 export function getAllGames() {
   return async function (dispatch) {
     try {
-      const response = await axios("https://videogame-app-api.onrender.com/videogames");
+      const response = await axios("https://videogames-api-bk15.onrender.com/videogames");
       return dispatch({ type: GET_ALL_GAMES, payload: response.data });
     } catch (err) {
       alert("The error seems to be: " + err.message);
@@ -44,7 +44,7 @@ export function getGamesByName(name) {
   return async function (dispatch) {
     try {
       const response = await axios(
-        `https://videogame-app-api.onrender.com/videogames?name=${name}`
+        `https://videogames-api-bk15.onrender.com/videogames?name=${name}`
       );
       return dispatch({ type: GET_GAMES_BY_NAME, payload: response.data });
     } catch (err) {
@@ -56,7 +56,7 @@ export function getGamesByName(name) {
 export function getIdDetails(id) {
   return async function (dispatch) {
     try {
-      const response = await axios(`https://videogame-app-api.onrender.com/videogames/${id}`);
+      const response = await axios(`https://videogames-api-bk15.onrender.com/videogames/${id}`);
       return dispatch({ type: GET_ID_DETAILS, payload: response.data });
     } catch (err) {
       alert("The error its supposed to be" + err.message);
@@ -67,7 +67,7 @@ export function getIdDetails(id) {
 export function getAllGenres() {
   return async function (dispatch) {
     try {
-      const response = await axios("https://videogame-app-api.onrender.com/genres");
+      const response = await axios("https://videogames-api-bk15.onrender.com/genres");
       return dispatch({ type: GET_GENRES, payload: response.data });
     } catch (err) {
       console.log(err.message)
